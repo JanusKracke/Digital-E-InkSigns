@@ -6,7 +6,7 @@ use embedded_svc::wifi::Configuration;
 use esp_idf_svc::http::client::{Configuration as HttpConfig, EspHttpConnection};
 use embedded_svc::http::client::Client;
 
-use crate::wifi_credentials;
+use crate::credentials;
 
 
 pub fn setup_wifi(modem: Modem, sysloop: EspEventLoop<System>, nvs: EspNvsPartition<NvsDefault>) -> anyhow::Result<BlockingWifi<EspWifi<'static>>> {
@@ -18,7 +18,7 @@ pub fn setup_wifi(modem: Modem, sysloop: EspEventLoop<System>, nvs: EspNvsPartit
 
 
 
-    wifi.set_configuration(&Configuration::Client(wifi_credentials::get_wifi()))?;
+    wifi.set_configuration(&Configuration::Client(credentials::get_wifi()))?;
 
         // Start Wifi
     wifi.start()?;

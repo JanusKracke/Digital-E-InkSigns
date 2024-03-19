@@ -5,6 +5,7 @@ authors = ["Janus Kracke <januskracke@outlook.de>"]
 edition = "2021"
 resolver = "2"
 rust-version = "1.71"
+build = "build.rs"
 
 [profile.release]
 opt-level = "s"
