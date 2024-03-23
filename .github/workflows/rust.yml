@@ -28,7 +28,7 @@ jobs:
       run: cargo install ldproxy && cargo install espup && espup install && . /home/runner/export-esp.sh
     
     - name: Build
-      run: cd ESP32-rust && cargo build --verbose
+      run: cd ESP32-rust && cargo build
 
     - name: Run tests
-      run: cd ESP32-rust cargo test --verbose
+      run: cd ESP32-rust cargo test
