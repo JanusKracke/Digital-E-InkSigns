@@ -27,7 +27,7 @@ jobs:
       run: rustup override set nightly
 
     - name: Install dependencies
-      run: cd ./ESP32-rust && sh install_deps.sh
+      run: sh ./ESP32-rust/install_deps.sh
     
     - name: Build
       run: cd ./ESP32-rust && cargo build
