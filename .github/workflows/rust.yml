@@ -25,7 +25,7 @@ jobs:
 
 
     - name: Install dependencies
-      run: cargo install espup && espup install
+      run: cargo install ldproxy && cargo install espup && espup install
     
     - name: Build
       run: cd ESP32-rust && cargo build --verbose
