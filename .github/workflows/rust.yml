@@ -26,8 +26,14 @@ jobs:
     - name: set toolchain
       run: rustup override set nightly
 
-    - name: Install dependencies
-      run: sh ./ESP32-rust/install_deps.sh
+    - name: Install ldproxy
+      run: cargo install ldproxy 
+
+    - name: Install espup
+      run: cargo install espup && espup install
+    
+    - name: load env vars
+      run: . /home/runner/export-esp.sh
     
     - name: Build
       run: cd ./ESP32-rust && cargo build
